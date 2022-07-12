@@ -1,28 +1,42 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import React from 'react';
 
 
 
 //prueba de push
 function App() {
+
+  const [numero, setNumero]= useState(0)
+
+ const sumar=()=>{
+setNumero((prevState) => (numero +1))
+ }
+
+  const restar=()=>{
+setNumero((prevState) => (numero - 1))
+  
+
+  
+ }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+
+    <div> Contador 
+    <p>
+      el estado es: {numero}
+    </p>
+    <button onClick={sumar} >+</button>
+    <button onClick={restar} >-</button>
     </div>
+    </>
+
+
+
   );
 }
+
+
 
 export default App;
